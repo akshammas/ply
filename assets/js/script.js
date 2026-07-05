@@ -22,3 +22,21 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
       menuBtn.innerHTML = '<i class="bi bi-list"></i>';
     });
   });
+
+  // products page: filter pills
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const filterCards = document.querySelectorAll('[data-category]');
+  if (filterPills.length && filterCards.length) {
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const cat = pill.dataset.filter;
+        filterCards.forEach(card => {
+          const show = cat === 'all' || card.dataset.category === cat;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
