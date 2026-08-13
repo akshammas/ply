@@ -297,6 +297,13 @@ nav.links a:hover {
 nav.links a:hover::after {
     width: 100%;
 }
+nav.links a.active {
+    color: var(--ink);
+}
+
+nav.links a.active::after {
+    width: 100%;
+}
 
 .nav-cta {
     display: flex;
@@ -1314,6 +1321,14 @@ footer h5 {
         padding: 64px 0;
     }
 }
+.phone-list-item {
+    white-space: nowrap;
+  }
+  @media (max-width: 576px) {
+    .phone-list-item {
+      white-space: normal;
+    }
+  }
 
 /* ===== PAGE BANNER (interior pages: About / Contact / Blog headers) ===== */
 .page-banner {
